@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- jquery 연결 -->
+  <script src="js/jquery.js"></script>
+</head>
+<body>
+
+  <div class="apple">Charlie</div>
+  <input type="text" id="melon" value="Lola">
+  <input type="hidden" value="Charlie">
+
+  <script>
+    //일반적인 자바스크립트 문법
+    // var apple = document.querySelector(".apple");
+    // console.log(apple);
+    // var a = document.getElementById("melon").value;
+
+    /* 
+     $("선택자") 를 사용하면 제이쿼리 함수를 적용할 수 있는 상태가 됨
+     $("선택자") 를 사용하면 순수한 태그를 얻을 수 있음
+    */
+    // var apple = $(".apple"); 
+    // console.log(apple);
+    console.log($(".apple")[0]); //순수한 엘리먼트 그 자체
+
+
+    // 태그의 value값 얻기 - 오버로딩 : 매개변수가 없으면 값을 받아오는 것 / 매개변수가 있으면 value값 바꾸기
+    //값을 얻기
+    var a = $("#melon").val(); 
+    console.log(a);
+
+    //값을 변경하기
+    $("#melon").val("changevalue");
+  </script>
+  
+</body>
+</html>

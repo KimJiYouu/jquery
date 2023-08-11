@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/jquery.js"></script>
+</head>
+<body>
+  <ul id="test">
+
+  </ul>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("test").innerHTML="<li>1</li><li>2</li>"
+    }, 3000);
+
+    // $("#test > li").click(function() {
+    //   console.log("이이이이"); //실행안됨
+    // })
+
+    //이벤트 위임 on(이벤트종류, 위임할 태그, 실행시킬함수)
+    $("#test").on("click", "li", function() {
+      console.log("dlrjsehdwkrkhkeflRjf");
+    })
+  </script>
+
+  <hr>
+
+  <div style="width: 100px; height: 100px; border: 1px solid #777;" class="x">
+
+  </div>
+
+  <script>
+    //on()역할이 다양함
+    //여러가지 이벤트를 같이 걸 수 있음(이벤트 체이닝)
+    $(".x").on("mouseenter", function() {
+      console.log("들어갈때 실행");
+    }).on("mouseleave", function() {
+      console.log("나갈떄 실행됨");
+    })
+  </script>
+</body>
+</html>

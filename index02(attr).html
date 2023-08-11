@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/jquery.js"></script>
+</head>
+<body>
+  <input type="text" id="test1">
+  <img src="#" class="test2">
+  <img src="#" class="test3" width="" height="" alt="">
+
+  <script>
+    //javascript
+    var id = document.getElementById("test1").id;
+    //jquery
+    //속성값의 확인
+    console.log($("#test1").attr("id"));
+    console.log($("#test1").attr("type"));
+
+    //값의 변경
+    $(".test2").attr("src", "lion.png");
+
+    //여러값 한번에 변경
+    //$(".test3").attr({속성값 : 변경할값})
+    $(".test3").attr({
+      src : "lion.png",
+      width : "200",
+      height: "200",
+      alt : "title"
+    })
+  </script>
+  
+</body>
+</html>

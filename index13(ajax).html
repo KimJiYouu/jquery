@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/jquery.js"></script>
+</head>
+<body>
+  <script>
+
+    //post 방식
+    $.ajax({ //스프링부트와 연결
+      url:"http://localhost:8181/api/vl/getInfo",
+      type: "post",
+      contentType: "application/json", //내가 보내는 데이터의 타입
+      data: JSON.stringify({num: "1", name: "Charlie"}), //보낼 데이터
+      dataType: "json", //속성종류: json, html, xml, text //서버에서 돌려받을 데이터에 대한 타입 - json 타입만 받겠음
+      success: function(data) { //요청 성공 시 콜백받을 함수
+        console.log(data);
+      }, 
+      error: function(status, error) { //에러 발생 시 콜백받을 함수
+        console.log(status);
+        console.log(error)
+      }
+    })
+
+    //get 방식
+    $.ajax({
+      url: "http://localhost:8181/api/vl/getData/7/Lola",
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(status, error) {
+        console.log(status);
+        console.log(error)
+      }
+    })
+  </script>
+</body>
+</html>
